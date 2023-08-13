@@ -4,7 +4,7 @@ import { homedir } from "node:os";
 // https://github.com/oven-sh/bun/blob/main/src/bun.js/node/node_os.zig#L349
 // relies on HOME env variable
 // process.env is useless
-const { symbols: lib } = dlopen("/lib64/libcap.so", {
+const { symbols: lib } = dlopen("/lib64/libc.so.6", {
     putenv: {
         args: [FFIType.cstring],
         returns: FFIType.void
